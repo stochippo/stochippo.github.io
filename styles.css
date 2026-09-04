@@ -1,0 +1,221 @@
+:root {
+  color-scheme: light;
+  --paper: #f3f0e9;
+  --ink: #061c2d;
+  --face: #0b2b42;
+  --muted: rgba(6, 28, 45, 0.72);
+  --paper-glow: rgba(255, 255, 255, 0.78);
+  --paper-sheen: rgba(255, 255, 255, 0.35);
+  --vignette: rgba(6, 28, 45, 0.055);
+  --shadow: #000;
+  --serif: "Noto Serif", Georgia, "Times New Roman", serif;
+  --sans: Montserrat, "Avenir Next", Futura, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 48% 42%, var(--paper-glow), transparent 35%),
+    linear-gradient(118deg, var(--paper-sheen), transparent 38%),
+    var(--paper);
+}
+
+body::before {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  content: "";
+  box-shadow: inset 0 0 9rem var(--vignette);
+  pointer-events: none;
+}
+
+.filter-definitions {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+.logo-face {
+  flood-color: var(--face);
+}
+
+.shadow-fill {
+  flood-color: var(--shadow);
+}
+
+.paper-fill {
+  flood-color: var(--paper);
+}
+
+main {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 4rem clamp(1.5rem, 5vw, 5.5rem);
+}
+
+.hero-content {
+  width: min(42rem, 100%);
+  text-align: center;
+}
+
+.logo-stage {
+  position: relative;
+  width: clamp(26rem, 44vw, 34rem);
+  max-width: calc(100vw - 3rem);
+  aspect-ratio: 1694 / 929;
+  margin: 0 auto 1.3rem;
+}
+
+.logo-fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  filter: url("#logo-inset");
+}
+
+h1 {
+  margin: 0;
+  color: transparent;
+  background: var(--face);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-family: var(--sans);
+  font-size: clamp(2.35rem, 4.8vw, 4.4rem);
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  line-height: 0.9;
+  text-transform: uppercase;
+  filter: url("#text-inset");
+}
+
+h1 strong {
+  display: inline-block;
+  margin-top: 0.14em;
+  color: transparent;
+  background: var(--face);
+  -webkit-background-clip: text;
+  background-clip: text;
+  font-size: 1.24em;
+  font-weight: 800;
+  letter-spacing: 0.25em;
+  transform: translateX(0.12em);
+}
+
+.proposition {
+  margin: 1.6rem 0 0;
+  font-family: var(--sans);
+  font-size: clamp(0.7rem, 1.2vw, 0.85rem);
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.intro {
+  max-width: 35rem;
+  margin: 1rem auto 0;
+  color: var(--muted);
+  font-family: var(--serif);
+  font-size: clamp(0.95rem, 1.35vw, 1.08rem);
+  line-height: 1.7;
+}
+
+.coming-soon {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.8rem;
+  font-family: var(--sans);
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+}
+
+.coming-soon .rule {
+  width: 2.5rem;
+  height: 1px;
+  background: var(--ink);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --paper: #061c2d;
+    --ink: #f3f0e9;
+    --face: #f3f0e9;
+    --muted: rgba(243, 240, 233, 0.72);
+    --paper-glow: rgba(255, 255, 255, 0.025);
+    --paper-sheen: rgba(255, 255, 255, 0.018);
+    --vignette: rgba(0, 0, 0, 0.28);
+    --shadow: #888;
+  }
+}
+
+@media (max-width: 720px) {
+  .hero {
+    min-height: 100svh;
+    padding: 5rem 1.5rem;
+  }
+
+  .hero-content {
+    max-width: 34rem;
+    margin: 0 auto;
+  }
+
+  .logo-stage {
+    width: min(88vw, 28rem);
+  }
+
+  h1 {
+    font-size: clamp(2.05rem, 9.5vw, 3.4rem);
+  }
+
+  .intro {
+    max-width: 28rem;
+    font-size: 0.95rem;
+  }
+
+}
+
+@media (max-height: 760px) and (min-width: 721px) {
+  .hero {
+    padding-block: 3rem;
+  }
+
+  .logo-stage {
+    width: 22rem;
+    margin-bottom: 0.8rem;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 4.2vw, 3.6rem);
+  }
+
+  .proposition {
+    margin-top: 1rem;
+  }
+
+  .coming-soon {
+    margin-top: 1rem;
+  }
+
+}

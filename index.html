@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Stochastic Hippo evaluates and tests software containing stochastic systems, LLMs, and agents."
+    />
+    <meta name="theme-color" content="#f3f0e9" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#061c2d" media="(prefers-color-scheme: dark)" />
+    <title>Stochastic Hippo — Evaluation for stochastic systems</title>
+    <link rel="icon" href="favicon.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <svg class="filter-definitions" aria-hidden="true">
+      <defs>
+        <filter id="logo-inset" x="-10%" y="-10%" width="120%" height="120%" color-interpolation-filters="sRGB">
+          <feFlood class="logo-face" result="navy" />
+          <feComposite in="navy" in2="SourceAlpha" operator="in" result="base" />
+
+          <feOffset in="SourceAlpha" dx="3" dy="3" result="shadow-offset" />
+          <feGaussianBlur in="shadow-offset" stdDeviation="1.2" result="shadow-blur" />
+          <feComposite in="SourceAlpha" in2="shadow-blur" operator="out" result="shadow-edge" />
+          <feFlood class="shadow-fill" flood-opacity="0.92" result="shadow-color" />
+          <feComposite in="shadow-color" in2="shadow-edge" operator="in" result="inner-shadow" />
+
+          <feOffset in="SourceAlpha" dx="-1" dy="-1" result="light-offset" />
+          <feGaussianBlur in="light-offset" stdDeviation="0.35" result="light-blur" />
+          <feComposite in="SourceAlpha" in2="light-blur" operator="out" result="light-edge" />
+          <feFlood class="paper-fill" flood-opacity="0.18" result="light-color" />
+          <feComposite in="light-color" in2="light-edge" operator="in" result="inner-light" />
+
+          <feMerge>
+            <feMergeNode in="base" />
+            <feMergeNode in="inner-light" />
+            <feMergeNode in="inner-shadow" />
+          </feMerge>
+        </filter>
+
+        <filter id="text-inset" x="-5%" y="-8%" width="110%" height="116%" color-interpolation-filters="sRGB">
+          <feOffset in="SourceAlpha" dx="2.5" dy="2.5" result="shadow-offset" />
+          <feGaussianBlur in="shadow-offset" stdDeviation="1" result="shadow-blur" />
+          <feComposite in="SourceAlpha" in2="shadow-blur" operator="out" result="shadow-edge" />
+          <feFlood class="shadow-fill" flood-opacity="0.9" result="shadow-color" />
+          <feComposite in="shadow-color" in2="shadow-edge" operator="in" result="inner-shadow" />
+
+          <feOffset in="SourceAlpha" dx="-0.5" dy="-0.5" result="light-offset" />
+          <feGaussianBlur in="light-offset" stdDeviation="0.2" result="light-blur" />
+          <feComposite in="SourceAlpha" in2="light-blur" operator="out" result="light-edge" />
+          <feFlood class="paper-fill" flood-opacity="0.12" result="light-color" />
+          <feComposite in="light-color" in2="light-edge" operator="in" result="inner-light" />
+
+          <feMerge>
+            <feMergeNode in="SourceGraphic" />
+            <feMergeNode in="inner-light" />
+            <feMergeNode in="inner-shadow" />
+          </feMerge>
+        </filter>
+      </defs>
+    </svg>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-content">
+          <div class="logo-stage" aria-hidden="true">
+            <img class="logo-fallback" src="logo-icon.svg" alt="" />
+          </div>
+
+          <h1 id="hero-title">Stochastic<br /><strong>Hippo</strong></h1>
+          <p class="proposition">Evaluation for non-deterministic systems.</p>
+          <p class="intro">
+            We test how AI systems actually behave—across realistic conditions,
+            edge cases, failures, and cost constraints.
+          </p>
+
+          <div class="coming-soon" role="status">
+            <span class="rule"></span>
+            <span>Coming soon</span>
+            <span class="rule"></span>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
